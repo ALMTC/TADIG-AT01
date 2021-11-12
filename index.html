@@ -26,14 +26,19 @@
         }
 
     </style>
+    <style>
+        @keyframes mymove {
+          0%{opacity: 0;}
+          50%{opacity: 1;}
+          100%{opacity: 0;}
+        }
+    </style>
 </head>
 
 <body  style="overflow-x: hidden;">
 
     <div style="height: 100vh;" class="d-flex justify-content-center align-items-center">
-        <div style="text-align: center;font-size: 2em;">
-            <span style="text-align: center;">EI!</span></BR>
-            <span style="text-align: center;">AQUI EMBAIXO</span>
+        <div id="text1" style="text-align: center;font-size: 2em;">
         </div>
     </div>
 
@@ -73,7 +78,21 @@
 
 
 
-
+    <script>
+        var x = 0;
+        function myFunction() {
+            if (x == 0){
+                document.getElementById("text1").innerHTML = "EI! <br>OLHA AQUI";
+                x = 1;
+            }else{
+                document.getElementById("text1").innerHTML = "EI! <br>AQUI EMBAIXO";
+                x = 0;
+            }
+            document.getElementById("text1").style.animation="mymove 5s linear infinite";
+            setTimeout(myFunction, 5000);
+        }
+        myFunction();
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init(
